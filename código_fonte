@@ -1,0 +1,66 @@
+// Como nosso intuito é utilizar um sensor de 
+// pH e a biblioteca do tinkercad não possui, 
+// simulamos com o sensor de umidade do solo.
+
+
+#include <LiquidCrystal.h>
+
+
+
+LiquidCrystal lcd(13,12,11,10,9,8,7);
+float valor_potencia;
+int umidade;//recebe do sensor os valores 
+int motorPin =6;//pino do motor
+int motorState = 1;//estado do motor
+int pH;
+
+void setup() {
+  // inicia a tela
+  lcd.begin(16, 2);//inicia 
+  lcd.print("Iniciando...");
+  delay(1000);
+  lcd.clear();//limpa
+  pinMode(motorPin, OUTPUT);
+}
+
+  
+void loop() {
+  
+  umidade = analogRead(A0);
+  
+  // Este cálculo, faz o valor alterar entre 0 a 14, que é o intervalo que normalmente varia o pH.
+  pH = (umidade / 60);
+
+  lcd.begin(16, 2);
+  
+  Serial.begin(9600);
+  Serial.print("pH = ");
+  Serial.println(pH);
+  
+  if (pH > 6.5){//se o pH for maior que 6.5 
+  	lcd.setCursor(0, 0);
+  	lcd.print("Neutralizador");
+  	lcd.setCursor(0, 1);
+  	lcd.print("Acido");
+  	digitalWrite(motorPin, HIGH);//liga motor
+    delay(3000);
+    lcd.clear();
+  }else if (pH >= 5.5 && pH <= 6.5){ // se o pH estiver entre 5.5 e 6.5
+    lcd.setCursor(0,0);
+    lcd.print("pH OK!");
+    digitalWrite(motorPin, LOW);//desliga motor
+    delay(3000);
+    lcd.clear();
+  }else{ // se o pH for menor que 5.5
+    lcd.setCursor(0,0);
+    lcd.print("Neutralizador");
+    lcd.setCursor(0,1);
+    lcd.print("Alcalino");
+    motorState = digitalRead(motorPin);  
+    digitalWrite(motorPin, HIGH);//liga motor
+    delay(3000);
+    lcd.clear();
+   
+  }
+
+  }
