@@ -53,7 +53,7 @@ A leitura será enviada para um app, onde trará informações a respeito da sa�
 
 Esperamos que este projeto seja útil e inspire outros a explorar a automação na agricultura. Acreditamos que a tecnologia pode desempenhar um papel importante na melhoria da produtividade e sustentabilidade do setor agrícola.
 
- Nosso intuito com o projeto é fazer com que as empresas e proprietários de plantações de alimentos tenham menos prejuízos em relação aos alimentos plantados que crescem sem nutrientes suficientes devido à alteração de pH do solo, prejudicado principalmente pelo uso intensivo de agrotóxicos. Consequentemente, gerando alimentos de maior qualidade nutricional e aumentando a produtividade, ajudando a amenizar problemas como a fome e a escassez de alimentos.
+ Nosso intuito com o projeto é fazer com que as empresas e proprietários de plantações de alimentos tenham menos prejuízos em relação aos alimentos plantados que crescem sem nutrientes suficientes devido à alteração de pH do solo, prejudicado principalmente pelo uso intensivo de agrotóxicos. Consequentemente, gerando alimentos de maior quantidade nutricional e mantendo o solo fértil por mais tempo, aumentando assim a produtividade a longo prazo, ajudando assim a amenizar problemas como a fome e a escassez de alimentos.
 
 
 
